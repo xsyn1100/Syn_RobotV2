@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardButton
 __MODULE__ = "formatting"
 __HELP__ = f"""
 **Formatting**
-Rose supports a large number of formatting options to make
+Syn supports a large number of formatting options to make
 your messages more expressive. Take a look!
 """
 __helpbtns__ = (
