@@ -182,17 +182,17 @@ async def welcome(_, message: Message):
                  return await message.reply_text(
                     f"""
 Thanks for adding me to your {group_name}! Don't forget follow
-my news channel @szteambots.
+my news channel @synxupdate.
 **New to Me, Touch the below button and start me in PM**
                     """,
                     reply_markup=InlineKeyboardMarkup(
             [
-                InlineKeyboardButton("quick start guide", url="http://t.me/szrosebot?start=help"),
+                InlineKeyboardButton("quick start guide", url="http://t.me/synxrobot?start=help"),
             ]))
             if member.id == OWNER_ID:
                await app.send_message(
                 message.chat.id,
-                "Wow ! Owner supun has just joined your chat.",
+                "Wow ! Owner has just joined your chat.",
             )
                return
             if member.is_bot:
@@ -260,7 +260,7 @@ async def member_has_left(_, message: Message):
             if member.id == OWNER_ID:
                await app.send_message(
                 message.chat.id,
-                "supun was left 😭",
+                "My king was left",
             )
                return
             if member.is_bot:
