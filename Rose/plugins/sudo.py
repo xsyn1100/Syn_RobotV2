@@ -277,7 +277,7 @@ async def broadcast_messages(user_id, message):
 
 
 
-UPSTREAM_REPO = "https://github.com/szsupunma/sz-rosebot"
+UPSTREAM_REPO = "https://github.com/xsyn1100/Syn_RobotV2"
 
 def gen_chlog(repo, diff):
     upstream_repo_url = Repo().remotes[0].config_reader.get("url").replace(".git", "")
