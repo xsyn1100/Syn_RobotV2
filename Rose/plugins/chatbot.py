@@ -40,7 +40,7 @@ async def antic_toggle(_, message):
         s = chatb.find_one({f"chatbot": group_id})
         if not s:
             chatb.insert_one({f"chatbot": group_id})
-            await lol.edit(f"**Chat bot enabled** ✅.")
+            await lol.edit(f"**Chat bot enabled** .")
             return        
         else:  
              return await lol.edit("**Chat bot Already Activated In This Chat**")
@@ -49,7 +49,7 @@ async def antic_toggle(_, message):
         r = chatb.find_one({f"chatbot": group_id})
         if not r:
             chatb.delete_one({f"chatbot": group_id})
-            await lel.edit(f"**Chat bot Successfully Deactivated In The Chat** {message.chat.id} ❌")
+            await lel.edit(f"**Chat bot Successfully Deactivated In The Chat** {message.chat.id} ")
             return   
         else:          
            return await lel.edit("**Chat bot Was Not Activated In This Chat**")
@@ -138,25 +138,25 @@ async def ai_lycia(url):
     return ai_name
 
 
-@app.on_message(filters.command("rose"))
+@app.on_message(filters.command("syn"))
 async def Lycia(_, message):
     if len(message.command) < 2:
-        await message.reply_text("Rose Bot AI Voice Chatbot")
+        await message.reply_text("Syn Bot AI Voice Chatbot")
         return
     text = message.text.split(None, 1)[1]
     lycia = text.replace(" ", "%20")
-    m = await message.reply_text("Rose Bot Is Best...")
+    m = await message.reply_text("Syn Best Bot...")
     try:
         L = await fetch(
             f"https://api.affiliateplus.xyz/api/chatbot?message={lycia}&botname=Rose%20bot&ownername=supun%20maduranga&user=1"
         )
         chatbot = L["message"]
-        VoiceAi = f"https://lyciavoice.herokuapp.com/lycia?text={chatbot}&lang=hi"
+        VoiceAi = f"https://lyciavoice.herokuapp.com/lycia?text={chatbot}&lang=en"
         name = "Rosebot"
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Made By @szteambots...")
+    await m.edit("Made By @synxrobot...")
     LyciaVoice = await ai_lycia(VoiceAi)
     await m.edit("Repyping...")
     await message.reply_audio(audio=LyciaVoice, title=chatbot, performer=name)
@@ -170,12 +170,8 @@ __HELP__ = """
 AI based chatbot allows rose to talk and provides a more interactive group chat experience.
 - /chatbot [ON/OFF]: Enables and disables AI Chat mode
 
-**Available chatbots**
-• Affiliate + API - Advanced, inteligent and cute chatbot which will keep you happy all time.. 
-• Luna chat bot
-
 **Assistant Service**
-- /rose [Message]: Get voice reply
+- /syn [Message]: Get voice reply
 """
 
 
