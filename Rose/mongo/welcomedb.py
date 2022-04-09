@@ -125,7 +125,7 @@ class Greetings(MongoDB):
                 "cleangoodbye_id": None,
                 "cleangoodbye": False,
                 "cleanservice": False,
-                "goodbye_text": 'Sad to see you leaving {first}.\nTake Care!',
+                "goodbye_text": False,
                 "welcome_text": 'Hey {first}, welcome to {chatname}!',
                 "welcome": False,
                 "goodbye": False,
